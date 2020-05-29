@@ -15,11 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['plefix' => 'admin'],function(){
-    Route::get('new/create','Admin\NewController@add');
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('news/create', 'Admin\NewsController@add');
 });
-Route::get('XXX/AAA/BBB','XXX\AAAController@BBB');
-Route::group(['plefix' => 'admin'],function(){
-    Route::get('Plofile/create','Admin\PlofileController@add');
-    Route::get('Plofile/edit','Admin\PlofileController@edit');
+    Route::get('XXX/AAA/BBB','XXX\AAAController@BBB');
+    
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('profile/create', 'Admin\PlofileController@add');
+    Route::get('profile/edit', 'Admin\PlofileController@edit');
 });
